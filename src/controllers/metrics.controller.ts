@@ -9,8 +9,6 @@ export default class MetricsController {
 
   @Post("/")
   public async getMetrics(@Body() body: ICharacteristicsConfig): Promise<Characteristics> {
-    let message: string = 'Hello World';
-    console.log(message);
 
     let repo: string = body.repoName;
     let workflow: string = body.workflowName;

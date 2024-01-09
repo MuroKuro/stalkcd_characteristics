@@ -2,6 +2,8 @@ import express = require("express");
 import MetricsController from "../controllers/metrics.controller";
 
 const router = express.Router();
+let message: string = 'Hello World';
+console.log(message);
 
 router.post("/", async (req, res) => {
     const controller = new MetricsController();
