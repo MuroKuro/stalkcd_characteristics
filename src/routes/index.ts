@@ -3,6 +3,7 @@ import PingController from "../controllers/ping.controller";
 import DownloadRouter from "./download.router";
 import CharacteristicsRouter from "./characteristics.router";
 import WorkflowsRouter from "./workflows.router";
+import MetricsRouter from "./metrics.router"
 
 
 const router = express.Router();
@@ -16,6 +17,6 @@ router.get("/ping", async (_req, res) => {
 router.use("/download", DownloadRouter);
 router.use("/characteristics", CharacteristicsRouter);
 router.use("/workflows", WorkflowsRouter);
-
+router.use("/metrics", MetricsRouter)
 
 export default router;

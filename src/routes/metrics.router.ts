@@ -6,6 +6,7 @@ const router = express.Router();
 router.post("/", async (req, res) => {
     const controller = new MetricsController();
     const response = await controller.getMetrics(req.body);
+    console.log(response)
     return res.send(response);
 });
 

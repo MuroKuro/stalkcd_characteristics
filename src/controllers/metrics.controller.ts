@@ -3,10 +3,6 @@ import { ICharacteristicsConfig } from '../interface';
 import { Characteristics } from '../models/Characteristics';
 import { GetKPIs } from '../GHAFilesAndCharacteristics/GetKPIs';
 
-interface PingResponse {
-  message: string;
-}
-
 
 @Route("metrics")
 @Tags("Metrics")
@@ -19,9 +15,7 @@ export default class MetricsController {
     let workflow: string = body.workflowName;
     let loadFrom: string = body.loadFrom || "local";
 
-    //return await new GetKPIs(repo, workflow).getKPIs(loadFrom);
-    return {
-      message: "pong",
-    };
+    return await new GetKPIs(repo, workflow).getKPIs(loadFrom);
+
   }
 }
