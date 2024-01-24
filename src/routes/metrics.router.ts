@@ -9,7 +9,7 @@ router.post("/", async (req, res) => {
     const controller = new MetricsController();
     const response = await controller.getMetrics(req.body);
 
-    axios.post('http://localhost:8081/src/main/routes/receiveMetrics.ts', { response })
+    axios.post('http://localhost:8081/receiveMetrics.router.ts', { response })
   .then((response) => {
     console.log(response.data);
   })
